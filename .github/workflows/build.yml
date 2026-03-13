@@ -41,4 +41,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.os }}-build
-          path: dist/*.{exe,dmg,zip}
+          path: dist/
+          if-no-files-found: error
