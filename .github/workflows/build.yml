@@ -9,8 +9,8 @@ on:
 jobs:
   release:
     runs-on: ${{ matrix.os }}
-
     strategy:
+      fail-fast: false
       matrix:
         os: [windows-latest, macos-latest]
 
@@ -21,7 +21,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install dependencies
         run: npm install
@@ -31,6 +31,8 @@ jobs:
           if [ "$RUNNER_OS" == "Windows" ]; then
             npm run build:win
           else
+            # Desactivar firma de Apple para evitar errores en CI sin certificados
+            export CSC_IDENTITY_AUTO_DISCOVERY=false
             npm run build:mac
           fi
         shell: bash

@@ -11,6 +11,10 @@
   },
   "build": {
     "appId": "com.pomodoro.plant",
+    "mac": {
+      "category": "public.app-category.utilities",
+      "icon": "logo.png"
+    },
     "win": {
       "icon": "logo.png"
     }
