@@ -29,11 +29,11 @@ jobs:
       - name: Build Electron App
         run: |
           if [ "$RUNNER_OS" == "Windows" ]; then
-            npm run build:win
+            npm run build:win -- --publish never
           else
-            # Desactivar firma de Apple para evitar errores en CI sin certificados
+            # Desactivar firma de Apple y publicación automática
             export CSC_IDENTITY_AUTO_DISCOVERY=false
-            npm run build:mac
+            npm run build:mac -- --publish never
           fi
         shell: bash
 
