@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/widget.css">
+  <title>Pomodoro Plant</title>
+</head>
+<body>
+  <div class="widget-wrapper widget-container">
+    <div class="drag-area draggable"></div>
+    
+    <div class="controls-top no-drag">
+      <button id="expand-btn" title="Fullscreen">↗</button>
+    </div>
+
+    <div class="plant-container">
+      <img id="plant-sprite" src="assets/sprites/frame_000.png" alt="plant" draggable="false">
+    </div>
+
+    <div class="timer-display">
+      <div id="session-label">Focus</div>
+      <div id="timer-text" class="font-mono">25:00</div>
+      <div class="progress-container">
+        <svg class="progress-ring" width="180" height="10">
+          <rect class="progress-bg" x="0" y="0" width="180" height="4" rx="2" />
+          <rect id="progress-bar" x="0" y="0" width="0" height="4" rx="2" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="controls-bottom no-drag">
+      <button id="start-pause-btn" class="primary-btn">Start</button>
+      <button id="reset-btn">Reset</button>
+    </div>
+  </div>
+
+  <script src="js/timer.js"></script>
+  <script src="js/plant.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Space+Mono&display=swap');
+
+:root {
+  --bg-color: #F5ECD7;
+  --surface-color: #EDE0C4;
+  --accent-warm: #C8956C;
+  --accent-green: #7BAE7F;
+  --text-primary: #3D2B1F;
+  --text-secondary: #8B6F5E;
+  --timer-ring: #C8956C;
+  --break-ring: #7BAE7F;
+  --shadow: rgba(61, 43, 31, 0.15);
+  --font-serif: 'Crimson Pro', 'Lora', Georgia, serif;
+  --font-mono: 'Space Mono', 'DM Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+body {
+  font-family: var(--font-serif);
+  color: var(--text-primary);
+  background: var(--bg-color);
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+  transition: opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.draggable {
+  -webkit-app-region: drag;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}
